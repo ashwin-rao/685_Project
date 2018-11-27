@@ -1,0 +1,600 @@
+          Code Name & Version = MCNP6, 1.0
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/       
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/    
+  _/      _/      _/             _/    _/_/       _/           _/    _/   
+ _/      _/        _/_/_/       _/      _/       _/             _/_/      
+  
+  +---------------------------------------------------------------------+
+  | Copyright 2008. Los Alamos National Security, LLC.  All rights      |
+  | reserved.                                                           |
+  |   This material was produced under U.S. Government contract         |
+  | DE-AC52-06NA25396 for Los Alamos National Laboratory, which is      |
+  | operated by Los Alamos National Security, LLC, for the U.S.         |
+  | Department of Energy. The Government is granted for itself and      |
+  | others acting on its behalf a paid-up, nonexclusive, irrevocable    |
+  | worldwide license in this material to reproduce, prepare derivative |
+  | works, and perform publicly and display publicly. Beginning five    |
+  | (5) years after 2008, subject to additional five-year worldwide     |
+  | renewals, the Government is granted for itself and others acting on |
+  | its behalf a paid-up, nonexclusive, irrevocable worldwide license   |
+  | in this material to reproduce, prepare derivative works, distribute |
+  | copies to the public, perform publicly and display publicly, and to |
+  | permit others to do so. NEITHER THE UNITED STATES NOR THE UNITED    |
+  | STATES DEPARTMENT OF ENERGY, NOR LOS ALAMOS NATIONAL SECURITY, LLC, |
+  | NOR ANY OF THEIR EMPLOYEES, MAKES ANY WARRANTY, EXPRESS OR IMPLIED, |
+  | OR ASSUMES ANY LEGAL LIABILITY OR RESPONSIBILITY FOR THE ACCURACY,  |
+  | COMPLETENESS, OR USEFULNESS OF ANY INFORMATION, APPARATUS, PRODUCT, |
+  | OR PROCESS DISCLOSED, OR REPRESENTS THAT ITS USE WOULD NOT INFRINGE |
+  | PRIVATELY OWNED RIGHTS.                                             |
+  +---------------------------------------------------------------------+
+  
+1mcnp     version 6     ld=05/28/13                     11/18/18 17:08:19 
+ *************************************************************************                 probid =  11/18/18 17:08:19 
+ i=ice.i o=thermal.o                                                             
+
+ 
+  warning.  Physics models enabled.
+         1-       Ice Asteroid Neutrons DP                                                        
+         2-       c Begin Cell Card                                                               
+         3-       1   1 -0.917 -25    IMP:N,P,H,D,T,A=1                                           
+         4-       11  1 -0.917 -24 25 IMP:N,P,H,D,T,A=1                                           
+         5-       21  1 -0.917 -23 24 IMP:N,P,H,D,T,A=1                                           
+         6-       31  1 -0.917 -22 23 IMP:N,P,H,D,T,A=1                                           
+         7-       41  1 -0.917 -21 22 IMP:N,P,H,D,T,A=1                                           
+         8-       51  1 -0.917 -20 21 IMP:N,P,H,D,T,A=1                                           
+         9-       61  1 -0.917 -19 20 IMP:N,P,H,D,T,A=1                                           
+        10-       71  1 -0.917 -18 19 IMP:N,P,H,D,T,A=1                                           
+        11-       81  1 -0.917 -17 18 IMP:N,P,H,D,T,A=1                                           
+        12-       91  1 -0.917 -16 17 IMP:N,P,H,D,T,A=1                                           
+        13-       101 1 -0.917 -15 16 IMP:N,P,H,D,T,A=1                                           
+        14-       111 1 -0.917 -14 15 IMP:N,P,H,D,T,A=1                                           
+        15-       121 1 -0.917 -13 14 IMP:N,P,H,D,T,A=1                                           
+        16-       131 1 -0.917 -12 13 IMP:N,P,H,D,T,A=1                                           
+        17-       141 1 -0.917 -11 12 IMP:N,P,H,D,T,A=1                                           
+        18-       151 1 -0.917 -10 11 IMP:N,P,H,D,T,A=1                                           
+        19-       2   0 10 -90        IMP:N,P,H,D,T,A=1                                           
+        20-       3   0 90            IMP:N,P,H,D,T,A=0                                           
+        21-       c End Cell Card                                                                 
+        22-                                                                                       
+        23-       c Begin Surface Card                                                            
+        24-       10 SO 2500                                                                      
+        25-       11 SO 2475                                                                      
+        26-       12 SO 2450                                                                      
+        27-       13 SO 2425                                                                      
+        28-       14 SO 2400                                                                      
+        29-       15 SO 2375                                                                      
+        30-       16 SO 2350                                                                      
+        31-       17 SO 2325                                                                      
+        32-       18 SO 2300                                                                      
+        33-       19 SO 2275                                                                      
+        34-       20 SO 2250                                                                      
+        35-       21 SO 2225                                                                      
+        36-       22 SO 2200                                                                      
+        37-       23 SO 2175                                                                      
+        38-       24 SO 2150                                                                      
+        39-       25 SO 2125                                                                      
+        40-       90 SO 2600.05                                                                   
+        41-       c End Surface Card                                                              
+        42-                                                                                       
+        43-       c Begin Data Cards                                                              
+        44-       MODE N P H D T A                                                                
+        45-       MPHYS ON                                                                        
+        46-       c ----------------                                                              
+        47-       SDEF POS 0 0 2510 ERG=2.5e-8 PAR=1                                              
+        48-       c SP1 -3 0.988 2.249                                                            
+        49-       c Material Card Ice Composition, rho=0.917                                      
+        50-         m1 1001.70c -0.1120                                                           
+        51-            8016.70c -0.8881                                                           
+        52-       c Tally Card                                                                    
+        53-       FC6 Energy Deposition Tally                                                     
+        54-       +F6 1 11 21 31 41 51 61 71 81 91 101 111 121 131 141 151                        
+        55-       PHYS:P 100. 0 0 -1 0                                                            
+        56-       PHYS:H 100. 4j                                                                  
+        57-       PHYS:D 100. 4j                                                                  
+        58-       PHYS:T 100. 4j                                                                  
+        59-       PHYS:A 100. 4j                                                                  
+        60-       CUT:N j j 0 0                                                                   
+        61-       CUT:P,H,D,A,T j j 0 0                                                           
+        62-       NPS 1e5                                                                         
+ 
+  comment.  total nubar used if fissionable isotopes are present.
+ 
+  warning.  there are only neutron tallies in this problem.
+ 
+  warning.  use models for the following missing data tables:
+   1001.  u
+ 
+  warning.    1 materials had unnormalized fractions. print table 40.
+
+
+1LAHET physics options:                                                                                 print table 41
+
+ lca    ielas   ipreq  iexisa  ichoic   jcoul  nexite   npidk   noact    icem    ilaq nevtype
+ lca        2       1       1      23       1       1       0       1       1       0      66
+
+ lcb    flenb(i),i=1,6                                                               ctofe       flim0
+ lcb    3.4900E+03  3.4900E+03  2.4900E+03  2.4900E+03  8.0000E+02  8.0000E+02 -1.0000E+00 -1.0000E+00
+
+ lea     ipht     icc  nobalc  nobale   ifbrk  ilvden   ievap   nofis
+ lea        1       4       1       0       1       0       0       1
+
+ leb         yzere       bzere       yzero       bzero
+ leb    1.5000E+00  8.0000E+00  1.5000E+00  1.0000E+01
+
+  comment.   nevtype for CEM set to  66
+1cells                                                                                                  print table 60
+
+                               atom        gram                                            neutron    photon     proton     photon wt  
+              cell      mat   density     density     volume       mass            pieces importance importance importance generation  
+
+        1        1        1  9.20209E-02 9.17000E-01 4.01944E+10 3.68583E+10           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+        2       11        1  9.20209E-02 9.17000E-01 1.43538E+09 1.31624E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+        3       21        1  9.20209E-02 9.17000E-01 1.46915E+09 1.34721E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+        4       31        1  9.20209E-02 9.17000E-01 1.50332E+09 1.37854E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+        5       41        1  9.20209E-02 9.17000E-01 1.53788E+09 1.41023E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+        6       51        1  9.20209E-02 9.17000E-01 1.57283E+09 1.44228E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+        7       61        1  9.20209E-02 9.17000E-01 1.60817E+09 1.47469E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+        8       71        1  9.20209E-02 9.17000E-01 1.64390E+09 1.50746E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+        9       81        1  9.20209E-02 9.17000E-01 1.68003E+09 1.54059E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+       10       91        1  9.20209E-02 9.17000E-01 1.71655E+09 1.57408E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+       11      101        1  9.20209E-02 9.17000E-01 1.75347E+09 1.60793E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+       12      111        1  9.20209E-02 9.17000E-01 1.79077E+09 1.64214E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+       13      121        1  9.20209E-02 9.17000E-01 1.82847E+09 1.67671E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+       14      131        1  9.20209E-02 9.17000E-01 1.86656E+09 1.71164E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+       15      141        1  9.20209E-02 9.17000E-01 1.90505E+09 1.74693E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+       16      151        1  9.20209E-02 9.17000E-01 1.94393E+09 1.78258E+09           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+       17        2        0  0.00000E+00 0.00000E+00 8.17658E+09 0.00000E+00           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+       18        3        0  0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00           0  0.0000E+00 0.0000E+00 0.0000E+00 -1.000E+00  
+
+ total                                               7.36264E+10 6.00175E+10
+
+                              deuteron   triton     alpha                                                                              
+              cell      mat  importance importance importance                                                                          
+
+        1        1        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+        2       11        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+        3       21        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+        4       31        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+        5       41        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+        6       51        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+        7       61        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+        8       71        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+        9       81        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+       10       91        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+       11      101        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+       12      111        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+       13      121        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+       14      131        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+       15      141        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+       16      151        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+       17        2        0  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+       18        3        0  0.0000E+00 0.0000E+00 0.0000E+00                                                                          
+
+    minimum source weight = 1.0000E+00    maximum source weight = 1.0000E+00
+
+ ***************************************************
+ * Random Number Generator  =                    1 *
+ * Random Number Seed       =       19073486328125 *
+ * Random Number Multiplier =       19073486328125 *
+ * Random Number Adder      =                    0 *
+ * Random Number Bits Used  =                   48 *
+ * Random Number Stride     =               152917 *
+ ***************************************************
+
+
+         4 warning messages so far.
+1cross-section tables                                                                                   print table 100
+     XSDIR used: /Users/ashwinrao/my_mcnp/MCNP_DATA/xsdir_mcnp6.1
+
+     table    length
+
+                        tables from file xdata/endf70a                                                   
+
+ particle-production data for deuterons being used from   1001.70c
+ no particle-production data for protons   from   1001.70c
+ no particle-production data for tritons   from   1001.70c
+ no particle-production data for alphas    from   1001.70c
+   1001.70c    6768   1-H -  1 at 293.6K from endf/b-vii.0 njoy99.248                             mat 125      03/27/08
+ particle-production data for protons   being used from   8016.70c
+ no particle-production data for deuterons from   8016.70c
+ no particle-production data for tritons   from   8016.70c
+ no particle-production data for alphas    from   8016.70c
+   8016.70c  394614   8-O - 16 at 293.6K from endf/b-vii.0 njoy99.248                             mat 825      08/25/07
+
+                        tables from file xdata/mcplib84                                                  
+
+   1000.84p    1974  Update of MCPLIB04 Photon Compton Broadening Data For MCNP5 see LA-UR-    12-00018        01/03/12
+   8000.84p    3348  Update of MCPLIB04 Photon Compton Broadening Data For MCNP5 see LA-UR-    12-00018        01/03/12
+
+                        tables from file xdata/endf70prot                                                
+
+   1001.70h   15895  acer                                                                         mat 125      09/17/07
+   8016.70h   54535  acer                                                                         mat 825      09/17/07
+
+                        tables from file xdata/la150u                                                    
+
+   8016.24u   72930  LA150 Photonuclear Data Library O-16                                         mat 825      07/26/00
+
+  total      550064
+
+ maximum photon energy set to    100.0 mev (maximum electron energy)
+
+                        tables from file xdata/el03                                                      
+
+   1000.03e    2329                                                                                          6/6/98    
+   8000.03e    2333                                                                                          6/6/98    
+
+1particles and energy limits                                                                            print table 101
+
+                         particle      maximum       smallest      largest       always        always
+                         cutoff        particle      table         table         use table     use model
+   particle type         energy        energy        maximum       maximum       below         above
+
+    1  n    neutron     0.0000E+00    1.0000E+36    2.0000E+01    1.5000E+02    2.0000E+01    1.5000E+02
+    2  p    photon      1.0000E-03    1.0000E+02    1.0000E+05    1.0000E+05    1.0000E+36    1.0000E+36
+       photonuclear     1.0000E+00    1.0000E+02    1.5000E+02    1.5000E+02    0.0000E+00    1.5000E+02
+    3  e    electron    1.0000E-03    1.0000E+02    1.0000E+02    1.0000E+02    1.0000E+36    1.0000E+36
+    9  h    proton      1.0000E+00    1.0000E+02    1.5000E+02    1.5000E+02    1.5000E+02    1.5000E+02
+   31  d    deuteron    2.0000E+00    1.0000E+02    0.0000E+00    0.0000E+00    0.0000E+00    0.0000E+00
+   32  t    triton      3.0000E+00    1.0000E+02    0.0000E+00    0.0000E+00    0.0000E+00    0.0000E+00
+   34  a    alpha       4.0000E+00    1.0000E+02    0.0000E+00    0.0000E+00    0.0000E+00    0.0000E+00
+
+
+The following nuclides use physics models rather than data tables:
+
+            1001.  u
+ 
+
+ ***********************************************************************************************************************
+
+ dump no.    1 on file runtpf     nps =           0     coll =              0     ctm =        0.00   nrn =             
+    0
+
+         4 warning messages so far.
+1problem summary                                                                                                           
+
+      run terminated when      100000  particle histories were done.
++                                                                                                    11/18/18 17:08:23 
+      Ice Asteroid Neutrons DP                                                             probid =  11/18/18 17:08:19 
+
+ neutron creation    tracks      weight        energy            neutron loss        tracks      weight        energy
+                                 (per source particle)                                           (per source particle)
+
+ source              100000    1.0000E+00    2.5000E-08          escape               89986    8.9986E-01    3.0135E-08
+ nucl. interaction        0    0.            0.                  energy cutoff            0    0.            0.        
+ particle decay           0    0.            0.                  time cutoff              0    0.            0.        
+ weight window            0    0.            0.                  weight window            0    0.            0.        
+ cell importance          0    0.            0.                  cell importance          0    0.            0.        
+ weight cutoff            0    0.            0.                  weight cutoff            0    0.            0.        
+ e or t importance        0    0.            0.                  e or t importance        0    0.            0.        
+ dxtran                   0    0.            0.                  dxtran                   0    0.            0.        
+ forced collisions        0    0.            0.                  forced collisions        0    0.            0.        
+ exp. transform           0    0.            0.                  exp. transform           0    0.            0.        
+ upscattering             0    0.            1.2945E-07          downscattering           0    0.            1.2062E-07
+ photonuclear             0    0.            0.                  capture              10014    1.0014E-01    3.6992E-09
+ (n,xn)                   0    0.            0.                  loss to (n,xn)           0    0.            0.        
+ prompt fission           0    0.            0.                  loss to fission          0    0.            0.        
+ delayed fission          0    0.            0.                  nucl. interaction        0    0.            0.        
+ prompt photofis          0    0.            0.                  particle decay           0    0.            0.        
+ tabular boundary         0    0.            0.                  tabular boundary         0    0.            0.        
+ tabular sampling         0    0.            0.                  elastic scatter          0    0.            0.        
+     total           100000    1.0000E+00    1.5445E-07              total           100000    1.0000E+00    1.5445E-07
+
+   number of neutrons banked                       0        average time of (shakes)              cutoffs
+   neutron tracks per source particle     1.0000E+00          escape            1.1304E+05          tco   1.0000E+33
+   neutron collisions per source particle 1.0504E+01          capture           2.3493E+04          eco   0.0000E+00
+   total neutron collisions                  1050352          capture or escape 1.0407E+05          wc1   0.0000E+00
+   net multiplication              1.0000E+00 0.0000          any termination   1.0407E+05          wc2   0.0000E+00
+
+ photon creation     tracks      weight        energy            photon loss         tracks      weight        energy
+                                 (per source particle)                                           (per source particle)
+
+ source                   0    0.            0.                  escape                6379    6.3790E-02    9.2247E-02
+ nucl. interaction        0    0.            0.                  energy cutoff            0    0.            2.6649E-06
+ particle decay           0    0.            0.                  time cutoff              0    0.            0.        
+ weight window            0    0.            0.                  weight window            0    0.            0.        
+ cell importance          0    0.            0.                  cell importance          0    0.            0.        
+ weight cutoff            0    0.            0.                  weight cutoff            0    0.            0.        
+ e or t importance        0    0.            0.                  e or t importance        0    0.            0.        
+ dxtran                   0    0.            0.                  dxtran                   0    0.            0.        
+ forced collisions        0    0.            0.                  forced collisions        0    0.            0.        
+ exp. transform           0    0.            0.                  exp. transform           0    0.            0.        
+ from neutrons        10045    1.0045E-01    2.2329E-01          compton scatter          0    0.            1.2859E-01
+ bremsstrahlung        1145    1.1450E-02    5.1693E-04          capture               4893    4.8930E-02    2.0284E-03
+ p-annihilation         164    1.6400E-03    8.3805E-04          pair production         82    8.2000E-04    1.7813E-03
+ photonuclear             0    0.            0.                  photonuclear abs         0    0.            0.        
+ electron x-rays          0    0.            0.                  loss to photofis         0    0.            0.        
+ compton fluores          0    0.            0.                                                                        
+ muon capt fluores        0    0.            0.                                                                        
+ 1st fluorescence         0    0.            0.                                                                        
+ 2nd fluorescence         0    0.            0.                                                                        
+ (gamma,xgamma)           0    0.            0.                                                                        
+ tabular sampling         0    0.            0.                                                                        
+ prompt photofis          0    0.            0.                                                                        
+     total            11354    1.1354E-01    2.2465E-01              total            11354    1.1354E-01    2.2465E-01
+
+   number of photons banked                    11354        average time of (shakes)              cutoffs
+   photon tracks per source particle      1.1354E-01          escape            2.2486E+04          tco   1.0000E+33
+   photon collisions per source particle  7.2632E-01          capture           2.6171E+04          eco   1.0000E-03
+   total photon collisions                     72632          capture or escape 2.4086E+04          wc1   0.0000E+00
+                                                              any termination   2.4078E+04          wc2   0.0000E+00
+
+ _________________________________
+ No creation or loss for protons  
+ _________________________________
+
+ deuteron creation   tracks      weight        energy            deuteron loss       tracks      weight        energy
+                                 (per source particle)                                           (per source particle)
+
+ source                   0    0.            0.                  escape                   0    0.            0.        
+ nucl. interaction        0    0.            0.                  energy cutoff         9996    9.9960E-02    1.8224E-09
+ particle decay           0    0.            0.                  time cutoff              0    0.            0.        
+ weight window            0    0.            0.                  weight window            0    0.            0.        
+ cell importance          0    0.            0.                  cell importance          0    0.            0.        
+ weight cutoff            0    0.            0.                  weight cutoff            0    0.            0.        
+ e or t importance        0    0.            0.                  e or t importance        0    0.            0.        
+ tabular sampling      9996    9.9960E-02    1.8224E-09          coll. energy loss        0    0.            0.        
+ photonuclear             0    0.            0.                  nucl. interaction        0    0.            0.        
+ elastic recoil           0    0.            0.                  elastic scatter          0    0.            0.        
+                                                                 particle decay           0    0.            0.        
+                                                                 capture                  0    0.            0.        
+ (gamma,xcharged)         0    0.            0.                  tabular sampling         0    0.            0.        
+                                                                 cosy aperture hit        0    0.            0.        
+                                                                 cosy faults              0    0.            0.        
+     total             9996    9.9960E-02    1.8224E-09              total             9996    9.9960E-02    1.8224E-09
+
+   number of deuterons banked                   9996                                              cutoffs
+   deuteron tracks per source particle    9.9960E-02                                                tco   1.0000E+33
+   collisons/substeps per source particle 0.0000E+00                                                eco   2.0000E+00
+                                                                                                    wc1   0.0000E+00
+                                                                                                    wc2   0.0000E+00
+
+ _________________________________
+ No creation or loss for tritons  
+ _________________________________
+
+ _________________________________
+ No creation or loss for alphas   
+ _________________________________
+
+ computer time so far in this run     0.06 minutes            maximum number ever in bank        27
+ computer time in mcrun               0.04 minutes            bank overflows to backup file       0
+ source particles per minute            2.4101E+06
+ random numbers generated                 22548999            most random numbers used was       25130 in history       99382
+
+ range of sampled source weights = 1.0000E+00 to 1.0000E+00
+1neutron  activity in each cell                                                                         print table 126
+
+                       tracks     population   collisions   collisions     number        flux        average      average
+              cell    entering                               * weight     weighted     weighted   track weight   track mfp
+                                                          (per history)    energy       energy     (relative)      (cm)
+
+        1        1           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        2       11           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        3       21           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        4       31           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        5       41           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        6       51           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        7       61           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        8       71           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        9       81           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       10       91           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       11      101           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       12      111           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       13      121           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       14      131           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       15      141          78           37         2271    2.2710E-02   3.6782E-08   5.0368E-08   1.0000E+00   5.4281E-01
+       16      151       45760        45704      1048081    1.0481E+01   3.6803E-08   4.8868E-08   1.0000E+00   5.4325E-01
+       17        2      135690       100000            0    0.0000E+00   2.7435E-08   3.0853E-08   1.0000E+00   0.0000E+00
+
+           total        181528       145741      1050352    1.0504E+01
+1photon   activity in each cell                                                                         print table 126
+
+                       tracks     population   collisions   collisions     number        flux        average      average
+              cell    entering                               * weight     weighted     weighted   track weight   track mfp
+                                                          (per history)    energy       energy     (relative)      (cm)
+
+        1        1           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        2       11           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        3       21           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        4       31           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        5       41           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        6       51           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        7       61           1            1            2    2.0000E-05   1.1041E-01   1.1041E-01   1.0000E+00   6.5633E+00
+        8       71           3            2           19    1.9000E-04   2.2080E-01   2.2080E-01   1.0000E+00   7.8373E+00
+        9       81           4            3           10    1.0000E-04   4.6068E-01   4.6068E-01   1.0000E+00   1.0434E+01
+       10       91          19           14          111    1.1100E-03   3.4630E-01   3.4630E-01   1.0000E+00   8.3835E+00
+       11      101          74           58          387    3.8700E-03   3.5899E-01   3.5899E-01   1.0000E+00   8.6426E+00
+       12      111         205          155         1010    1.0100E-02   4.4888E-01   4.4888E-01   1.0000E+00   9.2896E+00
+       13      121         573          440         2839    2.8390E-02   4.3075E-01   4.3075E-01   1.0000E+00   9.1713E+00
+       14      131        1558         1204         7406    7.4060E-02   4.8690E-01   4.8690E-01   1.0000E+00   9.6693E+00
+       15      141        4181         3258        21113    2.1113E-01   5.3739E-01   5.3739E-01   1.0000E+00   1.0068E+01
+       16      151        1446        11105        39735    3.9735E-01   1.0610E+00   1.0610E+00   1.0000E+00   1.4394E+01
+       17        2        6379         6379            0    0.0000E+00   1.5369E+00   1.5369E+00   1.0000E+00   0.0000E+00
+
+           total         14443        22619        72632    7.2632E-01
+1deuteron activity in each cell                                                                         print table 126
+
+                       tracks     population    substeps     substeps      number        flux        average      average
+              cell    entering                               * weight     weighted     weighted   track weight    substep 
+                                                          (per history)    energy       energy     (relative)      (cm)
+
+        1        1           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        2       11           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        3       21           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        4       31           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        5       41           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        6       51           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        7       61           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        8       71           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+        9       81           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       10       91           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       11      101           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       12      111           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       13      121           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       14      131           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       15      141           0           18            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       16      151           0         9978            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+       17        2           0            0            0    0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+           total             0         9996            0    0.0000E+00
+1summary of photons produced in neutron collisions
+
+              cell      number of      weight per     energy per     avg photon      mev/gm per    weight/neut    energy/neut
+                        photons       source neut    source neut      energy       source neut     collision      collision
+
+        1        1             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+        2       11             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+        3       21             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+        4       31             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+        5       41             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+        6       51             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+        7       61             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+        8       71             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+        9       81             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+       10       91             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+       11      101             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+       12      111             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+       13      121             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+       14      131             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+       15      141            23       2.30000E-04    5.11359E-04    2.22330E+00    2.92719E-13    1.01277E-02    2.25169E-02
+       16      151         10022       1.00220E-01    2.22779E-01    2.22290E+00    1.24975E-10    9.56224E-03    2.12559E-02
+       17        2             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+       18        3             0       0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+             total         10045       1.00450E-01    2.23290E-01    2.22290E+00
+
+
+
+  energy      number of        number       cum number      weight of       weight       cum weight
+ interval      photons        frequency    distribution      photons       frequency    distribution
+ 
+   20.000             0      0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+   15.000             0      0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+   10.000             0      0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+    9.000             0      0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+    8.000             0      0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+    7.000             0      0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+    6.000             0      0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+    5.000             0      0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+    4.000             0      0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+    3.000             0      0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+    2.000         10042      9.99701E-01    9.99701E-01    1.00420E-01    9.99701E-01    9.99701E-01
+    1.000             1      9.95520E-05    9.99801E-01    1.00000E-05    9.95520E-05    9.99801E-01
+    0.500             2      1.99104E-04    1.00000E+00    2.00000E-05    1.99104E-04    1.00000E+00
+    0.100             0      0.00000E+00    1.00000E+00    0.00000E+00    0.00000E+00    1.00000E+00
+    0.010             0      0.00000E+00    1.00000E+00    0.00000E+00    0.00000E+00    1.00000E+00
+    0.000             0      0.00000E+00    1.00000E+00    0.00000E+00    0.00000E+00    1.00000E+00
+
+   total          10045      1.00000E+00                   1.00450E-01    1.00000E+00
+
+1tally        6        nps =      100000
++                                   Energy Deposition Tally                                                    
+           tally type 6+   energy deposition                            units   mev/gram       
+           particle(s): neutrons 
+
+           masses  
+                   cell:       1           11           21           31           41           51           61     
+                         3.68583E+10  1.31624E+09  1.34721E+09  1.37854E+09  1.41023E+09  1.44228E+09  1.47469E+09
+                   cell:      71           81           91           101          111          121          131    
+                         1.50746E+09  1.54059E+09  1.57408E+09  1.60793E+09  1.64214E+09  1.67671E+09  1.71164E+09
+                   cell:      141          151                                                                     
+                         1.74693E+09  1.78258E+09
+ 
+ cell  1                                                                                                                               
+                 0.00000E+00 0.0000
+ 
+ cell  11                                                                                                                              
+                 0.00000E+00 0.0000
+ 
+ cell  21                                                                                                                              
+                 0.00000E+00 0.0000
+ 
+ cell  31                                                                                                                              
+                 0.00000E+00 0.0000
+ 
+ cell  41                                                                                                                              
+                 0.00000E+00 0.0000
+ 
+ cell  51                                                                                                                              
+                 0.00000E+00 0.0000
+ 
+ cell  61                                                                                                                              
+                 2.93252E-16 1.0000
+ 
+ cell  71                                                                                                                              
+                 5.01392E-15 0.7188
+ 
+ cell  81                                                                                                                              
+                 7.56604E-15 0.6945
+ 
+ cell  91                                                                                                                              
+                 3.61808E-14 0.4257
+ 
+ cell  101                                                                                                                             
+                 1.62394E-13 0.1960
+ 
+ cell  111                                                                                                                             
+                 5.22399E-13 0.1184
+ 
+ cell  121                                                                                                                             
+                 1.35547E-12 0.0730
+ 
+ cell  131                                                                                                                             
+                 3.93152E-12 0.0454
+ 
+ cell  141                                                                                                                             
+                 1.22624E-11 0.0291
+ 
+ cell  151                                                                                                                             
+                 5.63630E-11 0.0179
+
+ there are no nonzero tallies in the tally fluctuation chart bin for tally        6
+
+1status of the statistical checks used to form confidence intervals for the mean for each tally bin
+
+
+ tally   result of statistical checks for the tfc bin (the first check not passed is listed) and error magnitude check for all bins
+
+        6   no nonzero tallies were made in the tally fluctuation chart bin                           
+         missed all bin error check:    16 tally bins had     6 bins with zeros and     6 bins with relative errors exceeding 0.10
+
+
+ the 10 statistical checks are only for the tally fluctuation chart bin and do not apply to other tally bins.
+
+ the tally bins with zeros may or may not be correct: compare the source, cutoffs, multipliers, et cetera with the tally bins.
+
+ warning.       1 of the     1 tally fluctuation chart bins did not pass all 10 statistical checks.
+ warning.       1 of the     1 tallies had bins with relative errors greater than recommended.
+1tally fluctuation charts                              
+
+                            tally        6
+          nps      mean     error   vov  slope    fom
+         8000   0.0000E+00 0.0000 0.0000  0.0 0.0E+00
+        16000   0.0000E+00 0.0000 0.0000  0.0 0.0E+00
+        24000   0.0000E+00 0.0000 0.0000  0.0 0.0E+00
+        32000   0.0000E+00 0.0000 0.0000  0.0 0.0E+00
+        40000   0.0000E+00 0.0000 0.0000  0.0 0.0E+00
+        48000   0.0000E+00 0.0000 0.0000  0.0 0.0E+00
+        56000   0.0000E+00 0.0000 0.0000  0.0 0.0E+00
+        64000   0.0000E+00 0.0000 0.0000  0.0 0.0E+00
+        72000   0.0000E+00 0.0000 0.0000  0.0 0.0E+00
+        80000   0.0000E+00 0.0000 0.0000  0.0 0.0E+00
+        88000   0.0000E+00 0.0000 0.0000  0.0 0.0E+00
+        96000   0.0000E+00 0.0000 0.0000  0.0 0.0E+00
+       100000   0.0000E+00 0.0000 0.0000  0.0 0.0E+00
+
+ ***********************************************************************************************************************
+
+ dump no.    2 on file runtpf     nps =      100000     coll =        1122984     ctm =        0.04   nrn =         
+ 22548999
+
+         6 warning messages so far.
+
+
+ run terminated when      100000  particle histories were done.
+
+ computer time =    0.06 minutes
+
+ mcnp     version 6     05/28/13                     11/18/18 17:08:23                     probid =  11/18/18 17:08:19 

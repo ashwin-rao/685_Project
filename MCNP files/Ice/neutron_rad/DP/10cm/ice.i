@@ -1,0 +1,62 @@
+Ice Asteroid Neutrons DP
+c Begin Cell Card
+1   1 -0.917 -25    IMP:N,P,H,D,T,A=1
+11  1 -0.917 -24 25 IMP:N,P,H,D,T,A=1
+21  1 -0.917 -23 24 IMP:N,P,H,D,T,A=1
+31  1 -0.917 -22 23 IMP:N,P,H,D,T,A=1
+41  1 -0.917 -21 22 IMP:N,P,H,D,T,A=1
+51  1 -0.917 -20 21 IMP:N,P,H,D,T,A=1
+61  1 -0.917 -19 20 IMP:N,P,H,D,T,A=1
+71  1 -0.917 -18 19 IMP:N,P,H,D,T,A=1
+81  1 -0.917 -17 18 IMP:N,P,H,D,T,A=1
+91  1 -0.917 -16 17 IMP:N,P,H,D,T,A=1
+101 1 -0.917 -15 16 IMP:N,P,H,D,T,A=1
+111 1 -0.917 -14 15 IMP:N,P,H,D,T,A=1
+121 1 -0.917 -13 14 IMP:N,P,H,D,T,A=1
+131 1 -0.917 -12 13 IMP:N,P,H,D,T,A=1
+141 1 -0.917 -11 12 IMP:N,P,H,D,T,A=1
+151 1 -0.917 -10 11 IMP:N,P,H,D,T,A=1
+2   0 10 -90        IMP:N,P,H,D,T,A=1
+3   0 90            IMP:N,P,H,D,T,A=0 
+c End Cell Card
+
+c Begin Surface Card
+10 SO 2500
+11 SO 2475
+12 SO 2450
+13 SO 2425
+14 SO 2400
+15 SO 2375
+16 SO 2350
+17 SO 2325
+18 SO 2300
+19 SO 2275
+20 SO 2250
+21 SO 2225
+22 SO 2200
+23 SO 2175
+24 SO 2150
+25 SO 2125
+90 SO 2600.05
+c End Surface Card
+
+c Begin Data Cards
+MODE N P H D T A
+MPHYS ON
+c ----------------
+SDEF POS 0 0 2510 ERG=d1 PAR=1
+SP1 -3 0.988 2.249
+c Material Card Ice Composition, rho=0.917
+  m1 1001.70c -0.1120 
+     8016.70c -0.8881
+c Tally Card
+FC6 Energy Deposition Tally
++F6 1 11 21 31 41 51 61 71 81 91 101 111 121 131 141 151
+PHYS:P 100. 0 0 -1 0
+PHYS:H 100. 4j
+PHYS:D 100. 4j
+PHYS:T 100. 4j
+PHYS:A 100. 4j
+CUT:N j j 0 0
+CUT:P,H,D,A,T j j 0 0
+NPS 1e5

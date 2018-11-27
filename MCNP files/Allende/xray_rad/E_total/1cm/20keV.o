@@ -1,0 +1,510 @@
+          Code Name & Version = MCNP6, 1.0
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/       
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/    
+  _/      _/      _/             _/    _/_/       _/           _/    _/   
+ _/      _/        _/_/_/       _/      _/       _/             _/_/      
+  
+  +---------------------------------------------------------------------+
+  | Copyright 2008. Los Alamos National Security, LLC.  All rights      |
+  | reserved.                                                           |
+  |   This material was produced under U.S. Government contract         |
+  | DE-AC52-06NA25396 for Los Alamos National Laboratory, which is      |
+  | operated by Los Alamos National Security, LLC, for the U.S.         |
+  | Department of Energy. The Government is granted for itself and      |
+  | others acting on its behalf a paid-up, nonexclusive, irrevocable    |
+  | worldwide license in this material to reproduce, prepare derivative |
+  | works, and perform publicly and display publicly. Beginning five    |
+  | (5) years after 2008, subject to additional five-year worldwide     |
+  | renewals, the Government is granted for itself and others acting on |
+  | its behalf a paid-up, nonexclusive, irrevocable worldwide license   |
+  | in this material to reproduce, prepare derivative works, distribute |
+  | copies to the public, perform publicly and display publicly, and to |
+  | permit others to do so. NEITHER THE UNITED STATES NOR THE UNITED    |
+  | STATES DEPARTMENT OF ENERGY, NOR LOS ALAMOS NATIONAL SECURITY, LLC, |
+  | NOR ANY OF THEIR EMPLOYEES, MAKES ANY WARRANTY, EXPRESS OR IMPLIED, |
+  | OR ASSUMES ANY LEGAL LIABILITY OR RESPONSIBILITY FOR THE ACCURACY,  |
+  | COMPLETENESS, OR USEFULNESS OF ANY INFORMATION, APPARATUS, PRODUCT, |
+  | OR PROCESS DISCLOSED, OR REPRESENTS THAT ITS USE WOULD NOT INFRINGE |
+  | PRIVATELY OWNED RIGHTS.                                             |
+  +---------------------------------------------------------------------+
+  
+1mcnp     version 6     ld=05/28/13                     11/15/18 13:55:37 
+ *************************************************************************                 probid =  11/15/18 13:55:37 
+ i=Allende.i o=20keV.o                                                           
+
+ 
+  warning.  Physics models enabled.
+         1-       Allende Asteroid XRay full tally                                                
+         2-       c Begin Cell Card                                                               
+         3-       1   1 -2.9997 -10    IMP:N,P,H,D,T,A=1                                          
+         4-       2   0 10 -90         IMP:N,P,H,D,T,A=1                                          
+         5-       3   0 90             IMP:N,P,H,D,T,A=0                                          
+         6-       c End Cell Card                                                                 
+         7-                                                                                       
+         8-       c Begin Surface Card                                                            
+         9-       10 SO 2500                                                                      
+        10-       90 SO 2600.05                                                                   
+        11-       c End Surface Card                                                              
+        12-                                                                                       
+        13-       c Begin Data Cards                                                              
+        14-       MODE N P H D T A                                                                
+        15-       MPHYS ON                                                                        
+        16-       c ----------------                                                              
+        17-       SDEF POS 0 0 2501 ERG=0.020 PAR=2                                               
+        18-       c Material Card Allende Composition, rho=2.9997                                 
+        19-         m1 8016.70c  -0.6663                                                          
+        20-            12024.70c -0.1167                                                          
+        21-            12025.70c -0.0148                                                          
+        22-            12026.70c -0.0163                                                          
+        23-            13027.70c -0.0170                                                          
+        24-            14028.70c -0.1605                                                          
+        25-            20040.70c -0.0184                                                          
+        26-            26056.70c -0.2351                                                          
+        27-            28058.70c -0.0095                                                          
+        28-            28060.70c -0.0032                                                          
+        29-            PLIB=12p                                                                   
+        30-       c Tally Card                                                                    
+        31-       FC6 Energy Deposition Tally                                                     
+        32-       +F6 1                                                                           
+        33-       PHYS:P 100. 0 0 -1 0                                                            
+        34-       PHYS:H 100. 4j                                                                  
+        35-       PHYS:D 100. 4j                                                                  
+        36-       PHYS:T 100. 4j                                                                  
+        37-       PHYS:A 100. 4j                                                                  
+        38-       CUT:N j j 0 0                                                                   
+        39-       CUT:P j 1.0e-06 0 0                                                             
+        40-       CUT:H,D,A,T j j 0 0                                                             
+        41-       NPS 1e5                                                                         
+ 
+  comment.  total nubar used if fissionable isotopes are present.
+ 
+  warning.  there are only neutron tallies in this problem.
+ 
+  warning.  use models for the following missing data tables:
+  12024.  h
+  12025.  h
+  12026.  h
+ 
+  warning.    1 materials had unnormalized fractions. print table 40.
+
+
+1LAHET physics options:                                                                                 print table 41
+
+ lca    ielas   ipreq  iexisa  ichoic   jcoul  nexite   npidk   noact    icem    ilaq nevtype
+ lca        2       1       1      23       1       1       0       1       1       0      66
+
+ lcb    flenb(i),i=1,6                                                               ctofe       flim0
+ lcb    3.4900E+03  3.4900E+03  2.4900E+03  2.4900E+03  8.0000E+02  8.0000E+02 -1.0000E+00 -1.0000E+00
+
+ lea     ipht     icc  nobalc  nobale   ifbrk  ilvden   ievap   nofis
+ lea        1       4       1       0       1       0       0       1
+
+ leb         yzere       bzere       yzero       bzero
+ leb    1.5000E+00  8.0000E+00  1.5000E+00  1.0000E+01
+
+  comment.   nevtype for CEM set to  66
+1cells                                                                                                  print table 60
+
+                               atom        gram                                            neutron    photon     proton     photon wt  
+              cell      mat   density     density     volume       mass            pieces importance importance importance generation  
+
+        1        1        1  8.47205E-02 2.99970E+00 6.54498E+10 1.96330E+11           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+        2        2        0  0.00000E+00 0.00000E+00 8.17658E+09 0.00000E+00           1  1.0000E+00 1.0000E+00 1.0000E+00 -1.000E+00  
+        3        3        0  0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00           0  0.0000E+00 0.0000E+00 0.0000E+00 -1.000E+00  
+
+ total                                               7.36264E+10 1.96330E+11
+
+                              deuteron   triton     alpha                                                                              
+              cell      mat  importance importance importance                                                                          
+
+        1        1        1  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+        2        2        0  1.0000E+00 1.0000E+00 1.0000E+00                                                                          
+        3        3        0  0.0000E+00 0.0000E+00 0.0000E+00                                                                          
+
+    minimum source weight = 1.0000E+00    maximum source weight = 1.0000E+00
+
+ ***************************************************
+ * Random Number Generator  =                    1 *
+ * Random Number Seed       =       19073486328125 *
+ * Random Number Multiplier =       19073486328125 *
+ * Random Number Adder      =                    0 *
+ * Random Number Bits Used  =                   48 *
+ * Random Number Stride     =               152917 *
+ ***************************************************
+
+
+         4 warning messages so far.
+1cross-section tables                                                                                   print table 100
+     XSDIR used: /Users/ashwinrao/my_mcnp/MCNP_DATA/xsdir_mcnp6.1
+
+     table    length
+
+                        tables from file xdata/endf70a                                                   
+
+ particle-production data for protons   being used from   8016.70c
+ no particle-production data for deuterons from   8016.70c
+ no particle-production data for tritons   from   8016.70c
+ no particle-production data for alphas    from   8016.70c
+   8016.70c  394614   8-O - 16 at 293.6K from endf/b-vii.0 njoy99.248                             mat 825      08/25/07
+ no particle-production data for protons   from  12024.70c
+ no particle-production data for deuterons from  12024.70c
+ no particle-production data for tritons   from  12024.70c
+ no particle-production data for alphas    from  12024.70c
+  12024.70c   45958  12-Mg- 24 at 293.6K from endf/b-vii.0 njoy99.248                             mat1225      08/25/07
+ no particle-production data for protons   from  12025.70c
+ no particle-production data for deuterons from  12025.70c
+ no particle-production data for tritons   from  12025.70c
+ no particle-production data for alphas    from  12025.70c
+  12025.70c   45012  12-Mg- 25 at 293.6K from endf/b-vii.0 njoy99.248                             mat1228      08/25/07
+ no particle-production data for protons   from  12026.70c
+ no particle-production data for deuterons from  12026.70c
+ no particle-production data for tritons   from  12026.70c
+ no particle-production data for alphas    from  12026.70c
+  12026.70c   36438  12-Mg- 26 at 293.6K from endf/b-vii.0 njoy99.248                             mat1231      08/25/07
+ particle-production data for protons   being used from  13027.70c
+ no particle-production data for deuterons from  13027.70c
+ no particle-production data for tritons   from  13027.70c
+ no particle-production data for alphas    from  13027.70c
+  13027.70c  222428  13-Al- 27 at 293.6K from endf/b-vii.0 njoy99.248                             mat1325      08/25/07
+ particle-production data for protons   being used from  14028.70c
+ no particle-production data for deuterons from  14028.70c
+ no particle-production data for tritons   from  14028.70c
+ no particle-production data for alphas    from  14028.70c
+  14028.70c  250630  14-Si- 28 at 293.6K from endf/b-vii.0 njoy99.248                             mat1425      08/25/07
+ particle-production data for protons   being used from  20040.70c
+ no particle-production data for deuterons from  20040.70c
+ no particle-production data for tritons   from  20040.70c
+ no particle-production data for alphas    from  20040.70c
+  20040.70c  341668  20-Ca- 40 at 293.6K from endf/b-vii.0 njoy99.248                             mat2025      08/25/07
+
+                        tables from file xdata/endf70b                                                   
+
+ particle-production data for protons   being used from  26056.70c
+ no particle-production data for deuterons from  26056.70c
+ no particle-production data for tritons   from  26056.70c
+ no particle-production data for alphas    from  26056.70c
+  26056.70c  463608  26-Fe- 56 at 293.6K from endf/b-vii.0 njoy99.248                             mat2631      08/26/07
+ particle-production data for protons   being used from  28058.70c
+ no particle-production data for deuterons from  28058.70c
+ no particle-production data for tritons   from  28058.70c
+ no particle-production data for alphas    from  28058.70c
+  28058.70c  581160  28-Ni- 58 at 293.6K from endf/b-vii.0 njoy99.248                             mat2825      08/26/07
+ particle-production data for protons   being used from  28060.70c
+ no particle-production data for deuterons from  28060.70c
+ no particle-production data for tritons   from  28060.70c
+ no particle-production data for alphas    from  28060.70c
+  28060.70c  386511  28-Ni- 60 at 293.6K from endf/b-vii.0 njoy99.248                             mat2831      08/27/07
+
+                        tables from file xmc/eprdata12                                                   
+
+ 
+  comment.    8000.12p pips data for photon energy broadening converted to CDF form.
+   8000.12p   23455  ENDF/B-VI Release 8 photo/electro-atomic and relaxation data for 8-O         mat 800      12/14/09
+ 
+  comment.   12000.12p pips data for photon energy broadening converted to CDF form.
+  12000.12p   26183  ENDF/B-VI Release 8 photo/electro-atomic and relaxation data for 12-MG       mat1200      12/14/09
+ 
+  comment.   13000.12p pips data for photon energy broadening converted to CDF form.
+  13000.12p   39616  ENDF/B-VI Release 8 photo/electro-atomic and relaxation data for 13-AL       mat1300      12/14/09
+ 
+  comment.   14000.12p pips data for photon energy broadening converted to CDF form.
+  14000.12p   37932  ENDF/B-VI Release 8 photo/electro-atomic and relaxation data for 14-SI       mat1400      12/14/09
+ 
+  comment.   20000.12p pips data for photon energy broadening converted to CDF form.
+  20000.12p   40608  ENDF/B-VI Release 8 photo/electro-atomic and relaxation data for 20-CA       mat2000      12/14/09
+ 
+  comment.   26000.12p pips data for photon energy broadening converted to CDF form.
+  26000.12p   51245  ENDF/B-VI Release 8 photo/electro-atomic and relaxation data for 26-FE       mat2600      12/14/09
+ 
+  comment.   28000.12p pips data for photon energy broadening converted to CDF form.
+  28000.12p   50579  ENDF/B-VI Release 8 photo/electro-atomic and relaxation data for 28-NI       mat2800      12/14/09
+
+                        tables from file xdata/endf70prot                                                
+
+   8016.70h   54535  acer                                                                         mat 825      09/17/07
+  13027.70h   86202  acer                                                                         mat1325      09/17/07
+  14028.70h   98885  acer                                                                         mat1425      09/17/07
+  20040.70h   82706  acer                                                                         mat2025      09/17/07
+  26056.70h   82192  acer                                                                         mat2631      09/17/07
+  28058.70h  122652  acer                                                                         mat2825      09/17/07
+  28060.70h  112315  acer                                                                         mat2831      09/17/07
+
+                        tables from file xdata/la150u                                                    
+
+   8016.24u   72930  LA150 Photonuclear Data Library O-16                                         mat 825      07/26/00
+  13027.24u   68599  LA150 Photonuclear Data Library Al-27                                        mat1325      07/26/00
+  14028.24u   70693  LA150 Photonuclear Data Library Si-28                                        mat1425      07/26/00
+  20040.24u   67051  LA150 Photonuclear Data Library Ca-40                                        mat2025      07/26/00
+  26056.24u   64043  LA150 Photonuclear Data Library Fe-56                                        mat2631      07/26/00
+
+                        tables from file xmc/endf7u                                                      
+
+  12024.70u  136663   12-Mg- 24 photonuclear from ENDF/B-VII.0                                    mat1225      05/02/07
+  12025.70u  150048   12-Mg- 25 photonuclear from ENDF/B-VII.0                                    mat1228      05/02/07
+  12026.70u  141443   12-Mg- 26 photonuclear from ENDF/B-VII.0                                    mat1231      05/02/07
+  28058.70u  118808   28-Ni- 58 photonuclear from ENDF/B-VII.0                                    mat2825      05/02/07
+  28060.70u  117586   28-Ni- 60 photonuclear from ENDF/B-VII.0                                    mat2831      05/02/07
+
+  total     4684996
+
+ maximum photon energy set to    100.0 mev (maximum electron energy)
+
+                        tables from file xdata/el03                                                      
+
+   8000.03e    2333                                                                                          6/6/98    
+  12000.03e    2337                                                                                          6/6/98    
+  13000.03e    2337                                                                                          6/6/98    
+  14000.03e    2339                                                                                          6/6/98    
+  20000.03e    2343                                                                                          6/6/98    
+  26000.03e    2345                                                                                          6/6/98    
+  28000.03e    2347                                                                                          6/6/98    
+
+1particles and energy limits                                                                            print table 101
+
+                         particle      maximum       smallest      largest       always        always
+                         cutoff        particle      table         table         use table     use model
+   particle type         energy        energy        maximum       maximum       below         above
+
+    1  n    neutron     0.0000E+00    1.0000E+36    2.0000E+01    2.0000E+02    2.0000E+01    2.0000E+02
+    2  p    photon      1.0000E-06    1.0000E+02    1.0000E+05    1.0000E+05    1.0000E+36    1.0000E+36
+       photonuclear     6.2920E+00    1.0000E+02    1.4000E+02    1.5000E+02    1.4000E+02    1.5000E+02
+    3  e    electron    1.0000E-03    1.0000E+02    1.0000E+02    1.0000E+02    1.0000E+36    1.0000E+36
+    9  h    proton      1.0000E+00    1.0000E+02    1.5000E+02    1.5000E+02    0.0000E+00    1.5000E+02
+   31  d    deuteron    2.0000E+00    1.0000E+02    0.0000E+00    0.0000E+00    0.0000E+00    0.0000E+00
+   32  t    triton      3.0000E+00    1.0000E+02    0.0000E+00    0.0000E+00    0.0000E+00    0.0000E+00
+   34  a    alpha       4.0000E+00    1.0000E+02    0.0000E+00    0.0000E+00    0.0000E+00    0.0000E+00
+
+
+The following nuclides use physics models rather than data tables:
+
+           12024.  h
+           12025.  h
+           12026.  h
+ 
+
+ ***********************************************************************************************************************
+
+ dump no.    1 on file runtpi     nps =           0     coll =              0     ctm =        0.00   nrn =             
+    0
+
+         4 warning messages so far.
+1problem summary                                                                                                           
+
+      run terminated when      100000  particle histories were done.
++                                                                                                    11/15/18 13:55:42 
+      Allende Asteroid XRay full tally                                                     probid =  11/15/18 13:55:37 
+
+ _________________________________
+ No creation or loss for neutrons 
+ _________________________________
+
+ photon creation     tracks      weight        energy            photon loss         tracks      weight        energy
+                                 (per source particle)                                           (per source particle)
+
+ source              100000    1.0000E+00    2.0000E-02          escape               52468    5.2468E-01    1.0372E-02
+ nucl. interaction        0    0.            0.                  energy cutoff            0    0.            3.5837E-10
+ particle decay           0    0.            0.                  time cutoff              0    0.            0.        
+ weight window            0    0.            0.                  weight window            0    0.            0.        
+ cell importance          0    0.            0.                  cell importance          0    0.            0.        
+ weight cutoff            0    0.            0.                  weight cutoff            0    0.            0.        
+ e or t importance        0    0.            0.                  e or t importance        0    0.            0.        
+ dxtran                   0    0.            0.                  dxtran                   0    0.            0.        
+ forced collisions        0    0.            0.                  forced collisions        0    0.            0.        
+ exp. transform           0    0.            0.                  exp. transform           0    0.            0.        
+ from neutrons            0    0.            0.                  compton scatter          0    0.            8.7310E-06
+ bremsstrahlung         299    2.9900E-03    2.7396E-06          capture              60632    6.0632E-01    1.0404E-02
+ p-annihilation           0    0.            0.                  pair production          0    0.            0.        
+ photonuclear             0    0.            0.                  photonuclear abs         0    0.            0.        
+ electron x-rays          0    0.            0.                  loss to photofis         0    0.            0.        
+ compton fluores         10    1.0000E-04    4.6390E-07                                                                
+ muon capt fluores        0    0.            0.                                                                        
+ 1st fluorescence     12472    1.2472E-01    7.7963E-04                                                                
+ 2nd fluorescence       319    3.1900E-03    2.0657E-06                                                                
+ (gamma,xgamma)           0    0.            0.                                                                        
+ tabular sampling         0    0.            0.                                                                        
+ prompt photofis          0    0.            0.                                                                        
+     total           113100    1.1310E+00    2.0785E-02              total           113100    1.1310E+00    2.0785E-02
+
+   number of photons banked                    13100        average time of (shakes)              cutoffs
+   photon tracks per source particle      1.1310E+00          escape            8.6840E-01          tco   1.0000E+33
+   photon collisions per source particle  6.5765E-01          capture           1.2848E-02          eco   1.0000E-06
+   total photon collisions                     65765          capture or escape 4.0974E-01          wc1   0.0000E+00
+                                                              any termination   4.0974E-01          wc2   0.0000E+00
+
+ _________________________________
+ No creation or loss for protons  
+ _________________________________
+
+ _________________________________
+ No creation or loss for deuterons
+ _________________________________
+
+ _________________________________
+ No creation or loss for tritons  
+ _________________________________
+
+ _________________________________
+ No creation or loss for alphas   
+ _________________________________
+
+ computer time so far in this run     0.08 minutes            maximum number ever in bank         3
+ computer time in mcrun               0.01 minutes            bank overflows to backup file       0
+ source particles per minute            6.0000E+06
+ random numbers generated                  1249471            most random numbers used was       15174 in history       77637
+
+ range of sampled source weights = 1.0000E+00 to 1.0000E+00
+1photon   activity in each cell                                                                         print table 126
+
+                       tracks     population   collisions   collisions     number        flux        average      average
+              cell    entering                               * weight     weighted     weighted   track weight   track mfp
+                                                          (per history)    energy       energy     (relative)      (cm)
+
+        1        1       48828        61928        65765    6.5765E-01   2.1317E-03   2.1317E-03   1.0000E+00   8.5119E+02
+        2        2      101296       100856            0    0.0000E+00   1.9841E-02   1.9841E-02   1.0000E+00   0.0000E+00
+
+           total        150124       162784        65765    6.5765E-01
+1summary of photons produced in neutron collisions
+
+
+ no photons produced.
+
+1tally        6        nps =      100000
++                                   Energy Deposition Tally                                                    
+           tally type 6+   energy deposition                            units   mev/gram       
+           particle(s): neutrons 
+
+           masses  
+                   cell:       1                                                                                   
+                         1.96330E+11
+ 
+ cell  1                                                                                                                               
+                 4.92236E-14 0.0054
+
+
+ ===================================================================================================================================
+
+           results of 10 statistical checks for the estimated answer for the tally fluctuation chart (tfc) bin of tally        6
+
+ tfc bin     --mean--      ---------relative error---------      ----variance of the variance----      --figure of merit--     -pdf-
+ behavior    behavior      value   decrease   decrease rate      value   decrease   decrease rate       value     behavior     slope
+
+ desired      random       <0.10      yes      1/sqrt(nps)       <0.10      yes        1/nps           constant    random      >3.00
+ observed     random        0.01      yes          yes            0.00      yes         yes            constant   increase     10.00
+ passed?        yes          yes      yes          yes             yes      yes         yes               yes         no         yes
+
+ ===================================================================================================================================
+
+
+ warning.  the tally in the tally fluctuation chart bin did not pass  1 of the 10 statistical checks.
+
+1analysis of the results in the tally fluctuation chart bin (tfc) for tally        6 with nps =      100000  print table 160
+
+
+ normed average tally per history  = 4.92236E-14          unnormed average tally per history  = 9.66407E-03
+ estimated tally relative error    = 0.0054               estimated variance of the variance  = 0.0001
+ relative error from zero tallies  = 0.0032               relative error from nonzero scores  = 0.0043
+
+ number of nonzero history tallies =       48828          efficiency for the nonzero tallies  = 0.4883
+ history number of largest  tally  =        8923          largest  unnormalized history tally = 2.33710E-01
+ (largest  tally)/(average tally)  = 2.41834E+01          (largest  tally)/(avg nonzero tally)= 1.18083E+01
+
+ (confidence interval shift)/mean  = 0.0000               shifted confidence interval center  = 4.92247E-14
+
+
+ if the largest  history score sampled so far were to occur on the next history, the tfc bin quantities would change as follows:
+
+      estimated quantities           value at nps           value at nps+1           value(nps+1)/value(nps)-1.
+
+      mean                            4.92236E-14             4.92350E-14                     0.000232
+      relative error                  5.41473E-03             5.41838E-03                     0.000674
+      variance of the variance        1.14249E-04             1.17129E-04                     0.025206
+      shifted center                  4.92247E-14             4.92247E-14                     0.000000
+      figure of merit                 3.17747E+06             3.17319E+06                    -0.001347
+
+ the estimated slope of the 200 largest  tallies starting at  1.02793E-01 appears to be decreasing at least exponentially.
+ the large score tail of the empirical history score probability density function appears to have no unsampled regions.
+
+ fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (9.316E+06)*( 5.840E-01)**2 = (9.316E+06)*(3.411E-01) = 3.177E+06
+
+1unnormed tally density for tally        6          nonzero tally mean(m) = 1.979E-02   nps =      100000  print table 161
+
+ abscissa              ordinate   log plot of tally probability density function in tally fluctuation chart bin(d=decade,slope=10.0)
+  tally  number num den log den:d-----------------d-------------------d------------------d-------------------d------------------d---
+ 2.51-07      1 1.08+02   2.033 ******************|*******************|******************|*******************|******************|***
+ 3.98-07      1 6.81+01   1.833 ******************|*******************|******************|*******************|******************|   
+ 6.31-07      0 0.00+00   0.000                   |                   |                  |                   |                  |   
+ 1.00-06      1 2.71+01   1.433 ******************|*******************|******************|*******************|**********        |   
+ 1.58-06      0 0.00+00   0.000                   |                   |                  |                   |                  |   
+ 2.51-06      1 1.08+01   1.033 ******************|*******************|******************|*******************|***               |   
+ 3.98-06      3 2.04+01   1.310 ******************|*******************|******************|*******************|********          |   
+ 6.31-06      5 2.15+01   1.332 ******************|*******************|******************|*******************|********          |   
+ 1.00-05      7 1.90+01   1.278 ******************|*******************|******************|*******************|*******           |   
+ 1.58-05     12 2.05+01   1.312 ******************|*******************|******************|*******************|********          |   
+ 2.51-05     29 3.13+01   1.495 ******************|*******************|******************|*******************|************      |   
+ 3.98-05     29 1.97+01   1.295 ******************|*******************|******************|*******************|********          |   
+ 6.31-05     40 1.72+01   1.235 ******************|*******************|******************|*******************|******            |   
+ 1.00-04     85 2.30+01   1.362 ******************|*******************|******************|*******************|*********         |   
+ 1.58-04    120 2.05+01   1.312 ******************|*******************|******************|*******************|********          |   
+ 2.51-04    193 2.08+01   1.318 ******************|*******************|******************|*******************|********          |   
+ 3.98-04    315 2.14+01   1.331 ******************|*******************|******************|*******************|********          |   
+ 6.31-04    510 2.19+01   1.340 ******************|*******************|******************|*******************|*********         |   
+ 1.00-03    740 2.01+01   1.302 ******************|*******************|******************|*******************|********          |   
+ 1.58-03   1267 2.17+01   1.336 ******************|*******************|******************|*******************|********          |   
+ 2.51-03   1880 2.03+01   1.307 ******************|*******************|******************|*******************|********          |   
+ 3.98-03   2883 1.96+01   1.293 ******************|*******************|******************|*******************|********          |   
+ 6.31-03   4303 1.85+01   1.267 ******************|*******************|******************|*******************|*******           |   
+ 1.00-02   6081 1.65+01   1.217 ******************|*******************|******************|*******************|******            |   
+ 1.58-02   7927 1.36+01   1.132 ******************|*******************|******************|*******************|****              |   
+ 2.51-02   8655 9.34+00   0.970 mmmmmmmmmmmmmmmmmm|mmmmmmmmmmmmmmmmmmm|mmmmmmmmmmmmmmmmmm|mmmmmmmmmmmmmmmmmmm|m                 |   
+ 3.98-02   7422 5.05+00   0.703 ******************|*******************|******************|****************   |                  |   
+ 6.31-02   4501 1.93+00   0.286 ******************|*******************|******************|********           |                  |   
+ 1.00-01   1586 4.30-01  -0.367 ******************|*******************|**************    |                   |                  |   
+ 1.58-01    223 3.81-02  -1.419 ******************|**************     |                  |                   |                  |   
+ 2.51-01      8 8.63-04  -3.064 *                 |                   |                  |                   |                  |   
+  total   48828 4.88-01         d-----------------d-------------------d------------------d-------------------d------------------d---
+
+1status of the statistical checks used to form confidence intervals for the mean for each tally bin
+
+
+ tally   result of statistical checks for the tfc bin (the first check not passed is listed) and error magnitude check for all bins
+
+        6   missed  1 of 10 tfc bin checks: the figure of merit has a trend during the last half of the problem                       
+         passed all bin error check:     1 tally bins all have relative errors less than 0.10 with no zero bins
+
+
+ the 10 statistical checks are only for the tally fluctuation chart bin and do not apply to other tally bins.
+
+ warning.       1 of the     1 tally fluctuation chart bins did not pass all 10 statistical checks.
+1tally fluctuation charts                              
+
+                            tally        6
+          nps      mean     error   vov  slope    fom
+         8000   4.9265E-14 0.0194 0.0016 10.0 2737378
+        16000   4.9307E-14 0.0137 0.0009 10.0 2914083
+        24000   4.9190E-14 0.0112 0.0005 10.0 2972286
+        32000   4.9090E-14 0.0096 0.0004  7.9 3044898
+        40000   4.9093E-14 0.0086 0.0003 10.0 3087841
+        48000   4.9061E-14 0.0078 0.0002  8.2 3120030
+        56000   4.9213E-14 0.0073 0.0002  8.9 3145714
+        64000   4.9188E-14 0.0068 0.0002 10.0 3152948
+        72000   4.9216E-14 0.0064 0.0002 10.0 3163997
+        80000   4.9280E-14 0.0061 0.0001 10.0 3164084
+        88000   4.9280E-14 0.0058 0.0001 10.0 3169063
+        96000   4.9264E-14 0.0055 0.0001 10.0 3175753
+       100000   4.9224E-14 0.0054 0.0001 10.0 3177469
+
+ ***********************************************************************************************************************
+
+ dump no.    2 on file runtpi     nps =      100000     coll =          65765     ctm =        0.01   nrn =          
+ 1249471
+
+         6 warning messages so far.
+
+
+ run terminated when      100000  particle histories were done.
+
+ computer time =    0.08 minutes
+
+ mcnp     version 6     05/28/13                     11/15/18 13:55:42                     probid =  11/15/18 13:55:37 
